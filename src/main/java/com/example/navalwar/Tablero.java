@@ -29,25 +29,6 @@ public class Tablero {
         this.tableroDefensa = tableroDefensa;
     }
 
-    public void mostrarTableroAtaque() {
-        System.out.println("Tablero de Ataque:");
-        System.out.print("   ");
-        for (int i = 0; i < columnas; i++) {
-            System.out.print(i + "  ");
-        }
-        System.out.println();
-        for (int i = 0; i < filas; i++) {
-            System.out.print(i + "|");
-            for (int j = 0; j < columnas; j++) {
-                if (tableroAtaque[i][j] != 0) {
-                    System.out.print(" " + tableroAtaque[i][j] + " ");
-                } else {
-                    System.out.print(" 0 ");
-                }
-            }
-            System.out.println();
-        }
-    }
 
     public void mostrarTableroDefensaConBarcos() {
         System.out.println("Tablero de Defensa:");
@@ -57,10 +38,34 @@ public class Tablero {
         }
         System.out.println();
         for (int i = 0; i < filas; i++) {
-            System.out.print(i + "|");
+            System.out.print((char)('A' + i) + "|");
             for (int j = 0; j < columnas; j++) {
                 if (tableroDefensa[i][j] != 0) {
                     System.out.print(" " + tableroDefensa[i][j] + " ");
+                } else {
+                    System.out.print(" 0 ");
+                }
+            }
+            System.out.println();
+        }
+    }
+    public void mostrarTablerosJugador(Jugador atacante) {
+        System.out.println("            Defensa                                  Tablero de Ataque");
+        System.out.println("    0  1  2  3  4  5  6  7  8  9            " + "    0  1  2  3  4  5  6  7  8  9");
+        for (int i = 0; i < atacante.getTablero().getFilas(); i++) {
+            System.out.print((char) ('A' + i) + "| ");
+            for (int j = 0; j < atacante.getTablero().getColumnas(); j++) {
+                if (atacante.getTablero().getTableroDefensa()[i][j] != 0) {
+                    System.out.print(" " + atacante.getTablero().getTableroDefensa()[i][j] + " ");
+                } else {
+                    System.out.print(" 0 ");
+                }
+            }
+            System.out.print("           ");
+            System.out.print((char) ('A' + i) + "| ");
+            for (int j = 0; j < atacante.getTablero().getColumnas(); j++) {
+                if (atacante.getTablero().getTableroAtaque()[i][j] != 0) {
+                    System.out.print(" " + atacante.getTablero().getTableroAtaque()[i][j] + " ");
                 } else {
                     System.out.print(" 0 ");
                 }

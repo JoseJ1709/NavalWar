@@ -71,23 +71,23 @@ public class Main {
         System.out.println("===================================");
         System.out.println("Tableros de " + atacante.getNombre());
         System.out.println("===================================");
-        atacante.getTablero().mostrarTableroDefensaConBarcos();
-        System.out.println("-----------------------------------");
-        atacante.getTablero().mostrarTableroAtaque();
-
+        atacante.getTablero().mostrarTablerosJugador(atacante);
 
         System.out.println("Turno de " + atacante.getNombre());
-        System.out.print("Ingrese la fila para el ataque: ");
-        int filaAtaque = scanner.nextInt();
-        System.out.print("Ingrese la columna para el ataque: ");
-        int columnaAtaque = scanner.nextInt();
-
+        System.out.print("Ingrese la coordenada para el inicio del barco (A-J0-9): ");
+        String coordenadaInput = scanner.next();
+        int filaAtaque = convertirLetraANumero(coordenadaInput.substring(0, 1));
+        int columnaAtaque = Integer.parseInt(coordenadaInput.substring(1));
         atacante.realizarAtaque(filaAtaque, columnaAtaque, oponente);
     }
 
     private static boolean juegoFinalizado(Jugador jugador1, Jugador jugador2) {
 
         return jugador1.getFlota().isEmpty() || jugador2.getFlota().isEmpty();
+    }
+
+    private static int convertirLetraANumero(String letra) {
+        return letra.toUpperCase().charAt(0) - 'A';
     }
 
 }

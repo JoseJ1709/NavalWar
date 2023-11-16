@@ -58,16 +58,14 @@ public class Jugador {
     public void ubicarFlota(ArrayList<Barco> barcos) {
         for (Barco barco : barcos) {
             System.out.println("Ubicación del barco " + barco.getTipo() + " (" + barco.getTamano() + " casillas):");
-
             int filaInicio, columnaInicio, direccion;
 
             do {
 
-                System.out.print("Ingrese la fila para el inicio del barco: ");
-                filaInicio = scanner.nextInt();
-
-                System.out.print("Ingrese la columna para el inicio del barco: ");
-                columnaInicio = scanner.nextInt();
+                System.out.print("Ingrese la coordenada para el inicio del barco (A-J0-9): ");
+                String coordenadaInput = scanner.next();
+                filaInicio = convertirLetraANumero(coordenadaInput.substring(0, 1));
+                columnaInicio = Integer.parseInt(coordenadaInput.substring(1));
 
                 System.out.print("Seleccione la dirección del barco (1: Derecha, 2: Abajo, 3: Izquierda, 4: Arriba): ");
                 direccion = scanner.nextInt();
@@ -108,6 +106,9 @@ public class Jugador {
 
             tablero.mostrarTableroDefensaConBarcos();
         }
+    }
+    private int convertirLetraANumero(String letra) {
+        return letra.toUpperCase().charAt(0) - 'A';
     }
 
     private boolean sonCoordenadasValidasParaBarco(int fila, int columna, int direccion, Barco barco) {
