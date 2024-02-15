@@ -71,7 +71,7 @@ Juan Camilo Gomez &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&e
       <img src="https://github.com/Intro-CompuMovil/JaveWheels/assets/107308404/9d516bc0-a41e-4ed1-93b4-3a0bf0751315">
     </td>
     <td align="center">
-      <img src="https://github.com/Intro-CompuMovil/JaveWheels/assets/107308404/2d6d1f23-a6ba-44eb-97d3-3a55fd736f22>"
+      <img src="https://github.com/Intro-CompuMovil/JaveWheels/assets/107308404/2d6d1f23-a6ba-44eb-97d3-3a55fd736f22"
     </td>
     <td align="center">
       <img src="https://github.com/Intro-CompuMovil/JaveWheels/assets/107308404/4a75ebf1-64c6-4a20-8262-63223dd1bef6">
@@ -86,6 +86,7 @@ Juan Camilo Gomez &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&e
     </td>
 </tr>
 </table>
+     
 <table align="center">
   <h3 align="center">
   Conductor
